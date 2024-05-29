@@ -13,8 +13,6 @@ func color(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 	http.HandleFunc("/color", color)
-	http.ListenAndServe(":8090", nil)
-
 	http.Handle("/metrics", promhttp.Handler())
 	http.ListenAndServe(":3000", nil)
 }
