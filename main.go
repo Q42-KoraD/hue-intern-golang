@@ -1,12 +1,20 @@
 package main
 
 import (
-        "net/http"
+	"fmt"
+	"net/http"
 
-        "github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
+func color(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(w, "BLUE")
+}
+
 func main() {
-        http.Handle("/metrics", promhttp.Handler())
-        http.ListenAndServe(":3000", nil)
-} 
+	http.HandleFunc("/color", color)
+	http.ListenAndServe(":80", nil)
+
+	http.Handle("/metrics", promhttp.Handler())
+	http.ListenAndServe(":3000", nil)
+}

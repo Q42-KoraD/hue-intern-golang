@@ -10,7 +10,7 @@ RUN go mod download
 # Build
 RUN go build -o server main.go
 
-EXPOSE 3000
+EXPOSE 3000 8080
 
 # Run
 CMD ["./server"]
