@@ -8,7 +8,7 @@ import (
 )
 
 func color(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "GREEEEN")
+	fmt.Fprintf(w, "Greeeeen")
 }
 
 func main() {
