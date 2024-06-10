@@ -8,7 +8,7 @@ import (
 )
 
 func color(w http.ResponseWriter, req *http.Request) {
-	fmt.Fprintf(w, "The current version of this server is: BLAUW \n")
+	fmt.Fprintf(w, "The current version of this server is: GROEN \n")
 	fmt.Fprintf(w, "For Prometheus metrics go to /metrics")
 }
 
